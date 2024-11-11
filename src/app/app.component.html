@@ -1,0 +1,8 @@
+<div class="app-container">
+  <app-finance-card
+    [transactions]="transactions"
+    [selectedMonth]="currentMonth"
+    [selectedYear]="currentYear"
+    (changeMonth)="onMonthChange($event)"
+  ></app-finance-card>
+</div>

@@ -1,34 +1,49 @@
 {
-  "hash": "32e040f7",
-  "configHash": "6586fcdd",
-  "lockfileHash": "4341e6a6",
-  "browserHash": "8a0c99ca",
+  "hash": "e2e94e46",
+  "configHash": "f4965ae3",
+  "lockfileHash": "264060ef",
+  "browserHash": "87a041f3",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "9bad7b21",
+      "fileHash": "319be035",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "23fd9f9a",
+      "fileHash": "cc8b585f",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "92d150a6",
+      "fileHash": "9bfa5426",
+      "needsInterop": false
+    },
+    "@fortawesome/angular-fontawesome": {
+      "src": "../../../../../../node_modules/@fortawesome/angular-fontawesome/fesm2022/angular-fontawesome.mjs",
+      "file": "@fortawesome_angular-fontawesome.js",
+      "fileHash": "ef9a90e8",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../../../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "a1bce1b1",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-CVIMRY3Y": {
-      "file": "chunk-CVIMRY3Y.js"
+    "chunk-RDNMTSYJ": {
+      "file": "chunk-RDNMTSYJ.js"
     },
-    "chunk-NRIQAXQZ": {
-      "file": "chunk-NRIQAXQZ.js"
+    "chunk-G2LD6KAB": {
+      "file": "chunk-G2LD6KAB.js"
+    },
+    "chunk-WDMUDEB6": {
+      "file": "chunk-WDMUDEB6.js"
     }
   }
 }

@@ -1,0 +1,43 @@
+<div class="flex flex-col mt-6">
+  <!-- Navigation des mois -->
+  <div class="flex justify-center mb-6">
+    <button
+      (click)="previousMonth()"
+      class="text-gray-600 hover:text-black bg-blue-200 rounded-full px-1"
+    >
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <h2 class="text-xl font-bold text-center px-6">
+      {{ monthName }} {{ selectedYear }}
+    </h2>
+    <button
+      (click)="nextMonth()"
+      class="text-gray-600 hover:text-black bg-blue-200 rounded-full px-1"
+    >
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </div>
+
+  <div class="flex justify-around mb-6">
+    <app-finance-card-item
+      class="bg-green-100 rounded-lg !border-0 p-5"
+      label="Revenus"
+      [value]="monthlyIncome"
+      valueColor="green"
+    ></app-finance-card-item>
+
+    <app-finance-card-item
+      class="bg-red-100 rounded-lg !border-0 p-5"
+      label="Dépenses"
+      [value]="monthlyExpenses"
+      valueColor="red"
+    ></app-finance-card-item>
+
+    <app-finance-card-item
+      class="bg-gray-100 rounded-lg !border-0 p-5"
+      label="Balance"
+      [value]="monthlyBalance"
+      valueColor="black"
+    ></app-finance-card-item>
+  </div>
+</div>
