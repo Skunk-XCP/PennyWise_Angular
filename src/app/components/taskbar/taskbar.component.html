@@ -1,0 +1,36 @@
+<div
+  class="flex justify-evenly border-0 border-t-2 border-t-zinc-200 items-center p-2 m-2"
+>
+  <button
+    (click)="onOpenCalendar()"
+    class="p-2 rounded-lg transition duration-200 hover:bg-gray-200 hover:ring-2 hover:ring-gray-200 text-lg"
+  >
+    <fa-icon [icon]="faHome"></fa-icon>
+  </button>
+
+  <button
+    class="p-2 rounded-lg transition duration-200 hover:bg-gray-200 hover:ring-2 hover:ring-gray-200 text-lg"
+    (click)="onOpenCalendar()"
+  >
+    <fa-icon [icon]="faCalendar"></fa-icon>
+  </button>
+
+  <button
+    class="p-2 rounded-lg transition duration-200 hover:bg-gray-200 hover:ring-2 hover:ring-gray-200 text-4xl"
+    (click)="onOpenModal()"
+  >
+    <fa-icon [icon]="faAddCircle" class="text-blue-400"></fa-icon>
+  </button>
+
+  <button
+    class="p-2 rounded-lg transition duration-200 hover:bg-gray-200 hover:ring-2 hover:ring-gray-200 text-lg"
+  >
+    <fa-icon [icon]="faChart"></fa-icon>
+  </button>
+
+  <button
+    class="p-2 rounded-lg transition duration-200 hover:bg-gray-200 hover:ring-2 hover:ring-gray-200 text-lg"
+  >
+    <fa-icon [icon]="faMore"></fa-icon>
+  </button>
+</div>

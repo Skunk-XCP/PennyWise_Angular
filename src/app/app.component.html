@@ -6,3 +6,10 @@
     (changeMonth)="onMonthChange($event)"
   ></app-finance-card>
 </div>
+
+<div class="app-container">
+  <app-taskbar
+    (openModal)="handleOpenModal()"
+    (openCalendar)="handleOpenCalendar()"
+  ></app-taskbar>
+</div>

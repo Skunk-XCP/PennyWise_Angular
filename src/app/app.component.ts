@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FinanceCardComponent } from './components/finance-card/finance-card.component';
+import { TaskbarComponent } from './components/taskbar/taskbar.component';
 
 interface Transaction {
   amount: number;
@@ -12,7 +13,7 @@ interface Transaction {
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [FinanceCardComponent],
+  imports: [FinanceCardComponent, TaskbarComponent],
 })
 export class AppComponent {
   title = 'PennyWise';
@@ -30,5 +31,13 @@ export class AppComponent {
   onMonthChange(event: { month: number; year: number }) {
     this.currentMonth = event.month;
     this.currentYear = event.year;
+  }
+
+  handleOpenModal() {
+    console.log('Modal opened');
+  }
+
+  handleOpenCalendar() {
+    console.log('Calendar opened');
   }
 }
