@@ -1,6 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FinanceCardComponent } from './components/finance-card/finance-card.component';
 import { TaskbarComponent } from './components/taskbar/taskbar.component';
+import { TransactionModalComponent } from './components/transaction-modal/transaction-modal.component';
 
 interface Transaction {
   amount: number;
@@ -13,12 +15,19 @@ interface Transaction {
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [FinanceCardComponent, TaskbarComponent],
+  imports: [
+    FinanceCardComponent,
+    TaskbarComponent,
+    TransactionModalComponent,
+    CommonModule,
+  ],
 })
 export class AppComponent {
   title = 'PennyWise';
   currentMonth = new Date().getMonth();
   currentYear = new Date().getFullYear();
+  currentDate = new Date().toISOString().split('T')[0];
+  isTransactionModalOpen = false;
 
   transactions: Transaction[] = [
     { amount: 500, mode: 'income', date: '2024-11-01' },
@@ -34,10 +43,23 @@ export class AppComponent {
   }
 
   handleOpenModal() {
-    console.log('Modal opened');
+    this.isTransactionModalOpen = true;
+  }
+
+  handleCloseModal() {
+    this.isTransactionModalOpen = false;
+  }
+
+  handleTransaction(transaction: Transaction) {
+    this.transactions.push(transaction);
+    this.isTransactionModalOpen = false;
   }
 
   handleOpenCalendar() {
     console.log('Calendar opened');
+  }
+
+  handleCloseCalendar() {
+    console.log('Calendar closed');
   }
 }

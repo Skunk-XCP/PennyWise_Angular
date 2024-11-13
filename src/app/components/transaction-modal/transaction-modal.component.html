@@ -1,0 +1,63 @@
+<div
+  class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center"
+>
+  <div class="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+    <!-- Bouton croix pour fermer -->
+    <button
+      (click)="close.emit()"
+      class="absolute top-2 right-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none"
+    >
+      <!-- Icône de fermeture -->
+      <fa-icon [icon]="faTimes" class="h-3 w-3"></fa-icon>
+    </button>
+
+    <!-- Toggle switch "Revenus / Dépenses" -->
+    <app-toggle-switch
+      [initialIncome]="mode === 'income'"
+      (updateMode)="setMode($event)"
+    ></app-toggle-switch>
+
+    <!-- Formulaire pour ajouter une transaction -->
+    <div class="flex items-center mt-4">
+      <label for="amount" class="text-lg font-medium text-gray-700"
+        >Montant</label
+      >
+      <input
+        id="amount"
+        type="number"
+        placeholder="Saisir un montant"
+        min="0"
+        step="0.01"
+        class="border rounded ml-8 pl-2"
+        [(ngModel)]="amount"
+      />
+    </div>
+
+    <!-- Sélection de la date -->
+    <div class="flex items-center my-4">
+      <label class="text-lg font-medium text-gray-700">Date</label>
+      <button
+        class="ml-16 text-green-500 underline"
+        (click)="openDateSelector()"
+      >
+        {{ formattedDate }}
+      </button>
+    </div>
+
+    <button
+      class="w-full p-2 mt-6 rounded text-white text-xl"
+      [ngClass]="mode === 'income' ? 'bg-green-500' : 'bg-orange-500'"
+      (click)="addTransaction()"
+    >
+      Save
+    </button>
+
+    <!-- Modal de sélection de date simple -->
+    <!-- <app-calendar-simple-modal
+      *ngIf="isDateSelectorOpen"
+      [selectedDate]="internalSelectedDate"
+      (close)="isDateSelectorOpen = false"
+      (updateDate)="updateDate($event)"
+    ></app-calendar-simple-modal> -->
+  </div>
+</div>

@@ -7,6 +7,16 @@
   ></app-finance-card>
 </div>
 
+<app-transaction-modal
+  *ngIf="isTransactionModalOpen"
+  [initialMode]="'expenses'"
+  [selectedDate]="currentDate"
+  (transaction)="handleTransaction($event)"
+  (close)="handleCloseModal()"
+></app-transaction-modal>
+
+<div class="bg-zinc-200 h-96 overflow-auto rounded-lg p-4 mx-10"></div>
+
 <div class="app-container">
   <app-taskbar
     (openModal)="handleOpenModal()"

@@ -25,11 +25,11 @@ export class TaskbarComponent {
   @Output() openCalendar = new EventEmitter<void>();
   @Output() openModal = new EventEmitter<void>();
 
-  onOpenCalendar() {
-    this.openCalendar.emit();
-  }
-
   onOpenModal() {
     this.openModal.emit();
+  }
+
+  onOpenCalendar() {
+    this.openCalendar.emit();
   }
 }
