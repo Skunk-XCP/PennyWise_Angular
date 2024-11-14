@@ -15,6 +15,12 @@
   (close)="handleCloseModal()"
 ></app-transaction-modal>
 
+<app-calendar-modal
+  [isOpen]="isCalendarModalOpen"
+  [transactions]="transactions"
+  (close)="handleCloseCalendarModal()"
+></app-calendar-modal>
+
 <div class="bg-zinc-200 h-96 overflow-auto rounded-lg p-4 mx-10"></div>
 
 <div class="app-container">

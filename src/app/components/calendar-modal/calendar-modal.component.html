@@ -1,0 +1,66 @@
+<div
+  *ngIf="isOpen"
+  class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center"
+>
+  <div class="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+    <button
+      (click)="closeModal()"
+      class="absolute top-2 right-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+    >
+      <fa-icon [icon]="faTimes" class="h-5 w-5"></fa-icon>
+    </button>
+    <div class="flex items-center justify-evenly mb-4">
+      <button (click)="previousMonth()">
+        <fa-icon [icon]="faChevronLeft" class="h-5 w-5"></fa-icon>
+      </button>
+      <h2 class="text-xl font-bold text-center">
+        {{ monthName }} {{ currentYear }}
+      </h2>
+      <button (click)="nextMonth()">
+        <fa-icon [icon]="faChevronRight" class="h-5 w-5"></fa-icon>
+      </button>
+    </div>
+    <div class="grid grid-cols-7 gap-2">
+      <div *ngFor="let day of days" class="text-center font-semibold">
+        {{ day }}
+      </div>
+      <div *ngFor="let empty of emptyDaysStart" class="text-center p-4"></div>
+      <div
+        *ngFor="let date of daysInMonth"
+        class="p-2 border rounded-lg flex flex-col items-center justify-start h-20 overflow-hidden relative"
+        [ngClass]="{ 'bg-blue-100': isToday(date) }"
+      >
+        <span class="text-sm font-semibold">{{ date }}</span>
+        <div class="overflow-hidden max-h-10 text-center">
+          <div
+            *ngFor="
+              let transaction of (
+                transactionsByDate[
+                  formatDate(currentYear, currentMonth, date)
+                ] || []
+              )
+                .slice(0, 2)
+                .reverse()
+            "
+            class="text-xs font-semibold truncate"
+            [ngClass]="
+              transaction.mode === 'income' ? 'text-green-500' : 'text-red-500'
+            "
+          >
+            {{ transaction.amount }} €
+          </div>
+        </div>
+        <span
+          *ngIf="
+            (
+              transactionsByDate[formatDate(currentYear, currentMonth, date)] ||
+              []
+            ).length > 3
+          "
+          class="absolute bottom-1 text-xs text-gray-500"
+          >...</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

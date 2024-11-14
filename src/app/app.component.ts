@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CalendarModalComponent } from './components/calendar-modal/calendar-modal.component';
 import { FinanceCardComponent } from './components/finance-card/finance-card.component';
 import { TaskbarComponent } from './components/taskbar/taskbar.component';
 import { TransactionModalComponent } from './components/transaction-modal/transaction-modal.component';
@@ -19,6 +20,7 @@ interface Transaction {
     FinanceCardComponent,
     TaskbarComponent,
     TransactionModalComponent,
+    CalendarModalComponent,
     CommonModule,
   ],
 })
@@ -28,6 +30,7 @@ export class AppComponent {
   currentYear = new Date().getFullYear();
   currentDate = new Date().toISOString().split('T')[0];
   isTransactionModalOpen = false;
+  isCalendarModalOpen = false;
 
   transactions: Transaction[] = [
     { amount: 500, mode: 'income', date: '2024-11-01' },
@@ -56,10 +59,10 @@ export class AppComponent {
   }
 
   handleOpenCalendar() {
-    console.log('Calendar opened');
+    this.isCalendarModalOpen = true;
   }
 
-  handleCloseCalendar() {
-    console.log('Calendar closed');
+  handleCloseCalendarModal() {
+    this.isCalendarModalOpen = false;
   }
 }

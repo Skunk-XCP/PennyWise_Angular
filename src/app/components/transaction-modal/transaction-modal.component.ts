@@ -41,15 +41,9 @@ export class TransactionModalComponent implements OnInit {
     });
   }
 
-  constructor() {
-    console.log('Constructor - initialMode:', this.initialMode);
-  }
-
   ngOnInit() {
     // Initialiser `mode` avec `initialMode` pour que la couleur corresponde dès le chargement
     this.mode = this.initialMode;
-    console.log('ngOnInit - initialMode:', this.initialMode);
-    console.log('ngOnInit - mode after initialization:', this.mode);
   }
 
   setMode(newMode: 'income' | 'expenses') {
