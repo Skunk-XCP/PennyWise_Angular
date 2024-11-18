@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CalendarModalComponent } from './components/calendar-modal/calendar-modal.component';
 import { FinanceCardComponent } from './components/finance-card/finance-card.component';
 import { TaskbarComponent } from './components/taskbar/taskbar.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 import { TransactionModalComponent } from './components/transaction-modal/transaction-modal.component';
 
 interface Transaction {
@@ -20,6 +21,7 @@ interface Transaction {
     FinanceCardComponent,
     TaskbarComponent,
     TransactionModalComponent,
+    TransactionListComponent,
     CalendarModalComponent,
     CommonModule,
   ],
@@ -36,7 +38,7 @@ export class AppComponent {
     { amount: 500, mode: 'income', date: '2024-11-01' },
     { amount: 200, mode: 'expenses', date: '2024-11-02' },
     { amount: 300, mode: 'income', date: '2024-11-15' },
-    { amount: 100, mode: 'expenses', date: '2024-11-20' },
+    { amount: 100, mode: 'expenses', date: '2024-11-17' },
   ];
 
   // Méthode pour gérer le changement de mois

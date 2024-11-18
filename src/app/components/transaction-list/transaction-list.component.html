@@ -1,0 +1,26 @@
+<div class="space-y-6">
+  <div *ngFor="let date of filteredDates" [attr.key]="date">
+    <!-- Affiche la date formatée -->
+    <div class="text-center bg-blue-200 p-2 rounded-lg font-bold text-lg mb-2">
+      {{ formatDate(date) }}
+    </div>
+
+    <!-- Affiche les transactions associées à cette date -->
+    <div
+      *ngFor="let transaction of filteredAndGroupedTransaction[date]"
+      class="flex justify-between p-2 bg-white rounded-lg shadow-md mb-2"
+    >
+      <span class="text-lg font-semibold">
+        {{ transaction.mode === "income" ? "Revenus" : "Dépenses" }}
+      </span>
+      <span
+        [ngClass]="
+          transaction.mode === 'income' ? 'text-green-500' : 'text-red-500'
+        "
+        class="text-lg font-semibold"
+      >
+        {{ transaction.amount.toFixed(2) }} €
+      </span>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,13 @@
   (close)="handleCloseCalendarModal()"
 ></app-calendar-modal>
 
-<div class="bg-zinc-200 h-96 overflow-auto rounded-lg p-4 mx-10"></div>
+<div class="bg-zinc-200 h-96 overflow-auto rounded-lg p-4 mx-10">
+  <app-transaction-list
+    [transactions]="transactions"
+    [selectedMonth]="currentMonth"
+    [selectedYear]="currentYear"
+  ></app-transaction-list>
+</div>
 
 <div class="app-container">
   <app-taskbar
